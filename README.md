@@ -14,7 +14,8 @@
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
   <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /><br/>
   <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white" alt="Lua" />  
-  <img src="https://img.shields.io/badge/fivem-%23000000.svg?style=for-the-badge&logo=fivem&logoColor=white" alt="FiveM" /><br/>
+  <img src="https://img.shields.io/badge/fivem-%23000000.svg?style=for-the-badge&logo=fivem&logoColor=white" alt="FiveM" />
+  <img src="https://img.shields.io/badge/mta-%23000000.svg?style=for-the-badge&logo=gtav&logoColor=white" alt="MTA" /><br/>
 
   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
   <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vue.js&logoColor=%234FC08D" alt="Vue.js" />
