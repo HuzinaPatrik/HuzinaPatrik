@@ -1,57 +1,137 @@
-<h1 align="center">Hi 👋, I'm Patrik</h1>
-<h3 align="center">I do a lot of things :)...</h3>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  Patrik Huzina · GitHub profile README                       ║
+  ║  Theme: Midnight Minimal — #0A0A0A canvas, #3B82F6 accent     ║
+  ║  TODO markers below show where to drop your own links.        ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=huzinapatrik&label=Profile%20views&color=0e75b6&style=flat" alt="huzinapatrik" />
-</p>
+<!-- ░░░░░░░░░░░░░░░░░░░░  HERO  ░░░░░░░░░░░░░░░░░░░░ -->
 
-# 💻 Tech Stack
-<p align="center">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
-  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" /><br/>
-  <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white" alt="Lua" />  
-  <img src="https://img.shields.io/badge/fivem-%23000000.svg?style=for-the-badge&logo=fivem&logoColor=white" alt="FiveM" />
-  <img src="https://img.shields.io/badge/mta-%23000000.svg?style=for-the-badge&logo=gtav&logoColor=white" alt="MTA" /><br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A0A0A,100:3B82F6&height=220&section=header&text=Patrik%20Huzina&fontSize=56&fontColor=ffffff&fontAlignY=40&desc=Full-Stack%20Developer%20%C2%B7%20Founder%20of%20Skillion&descSize=18&descAlignY=60&animation=fadeIn" width="100%" alt="Patrik Huzina — Full-Stack Developer, Founder of Skillion" />
 
-  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vue.js&logoColor=%234FC08D" alt="Vue.js" />
-  <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" alt="Express.js" />
-  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
-  <img src="https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white" alt="Jenkins" />
-  <img src="https://img.shields.io/badge/redis-%23DC382D.svg?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
-  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" /><br/>
+<div align="center">
 
-  <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/mariadb-%23003545.svg?style=for-the-badge&logo=mariadb&logoColor=white" alt="MariaDB" />
-  <img src="https://img.shields.io/badge/postgresql-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/mongodb-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" /><br/>
+<a href="https://skillion.hu/en">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=3B82F6&center=true&vCenter=true&width=640&height=55&lines=Full-Stack+Developer+%26+Founder;Building+Skillion+%E2%80%94+AI-powered+learning;FiveM+%2F+MTA+game-server+developer;DevOps+%C2%B7+Cloud+%C2%B7+scalable+backends" alt="Typing intro" />
+</a>
 
-  <img src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
-  <img src="https://img.shields.io/badge/flask-%23000000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-  <img src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
-  <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring" />
-  <img src="https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white" alt="Svelte" /><br/>
+</div>
 
-  <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
-  <img src="https://img.shields.io/badge/photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe-photoshop&logoColor=white" alt="Photoshop" />
-  <img src="https://img.shields.io/badge/postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
-  <img src="https://img.shields.io/badge/notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white" alt="Notion" />
-</p>
+---
 
-<p align="center">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=huzinapatrik&show_icons=true&locale=en&layout=compact" alt="huzinapatrik" />
-</p>
+<!-- ░░░░░░░░░░░░░░░░░░░░  ABOUT  ░░░░░░░░░░░░░░░░░░░░ -->
 
-<p align="center">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=huzinapatrik&show_icons=true&locale=en" alt="huzinapatrik" />
-</p>
+### ⚡ About
 
-<p align="center">
-  <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=huzinapatrik&" alt="huzinapatrik" />
-</p>
+I'm **Patrik** — a full-stack developer and the founder of **[Skillion](https://skillion.hu/en)**, an AI-powered learning platform used by **10,000+ students**. I build products end-to-end: polished **React / Next.js / Vue** frontends, scalable **Node / Spring / Laravel** backends, and **Docker + Kubernetes** infrastructure with CI/CD. I got my start in **game-server development** (FiveM · MTA · Lua), and I bring a creative, design-minded eye to everything I ship.
+
+<div align="center">
+
+<!-- TODO: change the country flag/text if you're not in Hungary -->
+🇭🇺&nbsp; Hungary &nbsp;·&nbsp; 💼&nbsp; Founder &amp; Full-Stack Dev @ Skillion &nbsp;·&nbsp; 🚀&nbsp; Currently scaling Skillion
+
+</div>
+
+---
+
+<!-- ░░░░░░░░░░░░░░░░░░░░  SKILLION  ░░░░░░░░░░░░░░░░░░░░ -->
+
+### 🚀 Currently building — Skillion
+
+> **Skillion** — *Learn faster and smarter, with AI.*
+> Upload any material and Skillion instantly turns it into a complete learning toolkit.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+
+**What it does**
+- 🧠 **Adaptive quizzes** that scale to your level
+- 🎙️ **AI podcasts** — 7 styles · 19 voices
+- 🃏 **Smart flashcards** with visuals
+- 💬 **Source-backed AI chat** over your notes
+- 🗺️ **Auto-built learning plans**
+
+</td>
+<td width="50%" valign="top">
+
+**By the numbers**
+- 👨‍🎓 **10,000+** students
+- ⭐ **4.8** on the App Store
+- 🆓 **3-day** free trial
+- ⚙️ Built with **Next.js** &amp; **ElevenLabs**
+
+<br/>
+
+<a href="https://skillion.hu/en">
+  <img src="https://img.shields.io/badge/Skillion-Try_it_free-3B82F6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0A0A0A" alt="Visit Skillion" />
+</a>
+
+</td>
+  </tr>
+</table>
+
+---
+
+<!-- ░░░░░░░░░░░░░░░░░░░░  TECH STACK  ░░░░░░░░░░░░░░░░░░░░ -->
+
+### 🧰 Tech Stack
+
+<div align="center">
+
+**Languages**<br/>
+<img src="https://skillicons.dev/icons?i=js,ts,python,java,cs,cpp,c,ruby,rust,php,lua&theme=dark" alt="Languages: JavaScript, TypeScript, Python, Java, C#, C++, C, Ruby, Rust, PHP, Lua" />
+
+**Frontend**<br/>
+<img src="https://skillicons.dev/icons?i=react,nextjs,vue,svelte,tailwind,html,css&theme=dark" alt="Frontend: React, Next.js, Vue, Svelte, Tailwind, HTML, CSS" />
+
+**Backend**<br/>
+<img src="https://skillicons.dev/icons?i=nodejs,express,laravel,spring,django,flask&theme=dark" alt="Backend: Node.js, Express, Laravel, Spring, Django, Flask" />
+
+**Databases**<br/>
+<img src="https://skillicons.dev/icons?i=mysql,mariadb,postgres,mongodb,redis&theme=dark" alt="Databases: MySQL, MariaDB, PostgreSQL, MongoDB, Redis" />
+
+**DevOps &amp; Tools**<br/>
+<img src="https://skillicons.dev/icons?i=docker,kubernetes,jenkins,git,github,postman,figma,ps&theme=dark" alt="DevOps and tools: Docker, Kubernetes, Jenkins, Git, GitHub, Postman, Figma, Photoshop" />
+
+<sub>🎮 Also: <b>FiveM</b> &amp; <b>MTA</b> game-server development (Lua)</sub>
+
+</div>
+
+---
+
+<!-- ░░░░░░░░░░░░░░░░░░░░  STATS  ░░░░░░░░░░░░░░░░░░░░ -->
+
+### 📊 GitHub Stats
+
+<div align="center">
+
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=HuzinaPatrik&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github&title_color=3B82F6&icon_color=3B82F6&text_color=c9d1d9&bg_color=0D1117" alt="Patrik's GitHub stats" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HuzinaPatrik&layout=compact&langs_count=10&hide_border=true&title_color=3B82F6&text_color=c9d1d9&bg_color=0D1117" alt="Patrik's most used languages" />
+
+</div>
+
+---
+
+<!-- ░░░░░░░░░░░░░░░░░░░░  CONNECT  ░░░░░░░░░░░░░░░░░░░░ -->
+
+### 🤝 Connect
+
+<div align="center">
+
+<a href="https://github.com/HuzinaPatrik">
+  <img src="https://img.shields.io/badge/GitHub-HuzinaPatrik-3B82F6?style=for-the-badge&logo=github&logoColor=white&labelColor=0A0A0A" alt="GitHub" />
+</a>
+<a href="https://skillion.hu/en">
+  <img src="https://img.shields.io/badge/Skillion-skillion.hu-3B82F6?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0A0A0A" alt="Skillion website" />
+</a>
+<a href="mailto:patrikhuzina@gmail.com">
+  <img src="https://img.shields.io/badge/Email-Get_in_touch-3B82F6?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0A0A0A" alt="Email" />
+</a>
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3B82F6,100:0A0A0A&height=120&section=footer&reversal=true" width="100%" alt="" />
