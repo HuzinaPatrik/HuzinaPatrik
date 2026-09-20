@@ -1,0 +1,15 @@
+{
+  "name": "huzinapatrik-profile-assets",
+  "private": true,
+  "type": "module",
+  "description": "Generates the hand-designed SVG assets of the profile README (text is converted to outlines, so it renders identically everywhere).",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node preview.mjs"
+  },
+  "dependencies": {
+    "lucide-static": "^0.469.0",
+    "opentype.js": "1.3.4",
+    "svgo": "^3.3.2"
+  }
+}
