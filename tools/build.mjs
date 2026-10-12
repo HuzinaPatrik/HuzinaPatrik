@@ -6,7 +6,7 @@ import { optimize } from 'svgo';
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { profile, assetBase, themes, disciplines, footerLine, footerLineShort } from './content.mjs';
+import { profile, assetBase, themes, disciplines } from './content.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -17,7 +17,6 @@ const FONTS = {
   heading: loadFont('ArchivoExp-700.ttf'),
   title: loadFont('Archivo-600.ttf'),
   body: loadFont('Archivo-500.ttf'),
-  regular: loadFont('Archivo-400.ttf'),
   mono: loadFont('JetBrainsMono-500.ttf'),
 };
 
@@ -90,10 +89,12 @@ function icon(name, x, y, size, color, stroke = 1.7) {
   return `<g transform="translate(${n(x)} ${n(y)}) scale(${n(s)})" fill="none" stroke="${color}" stroke-width="${n(stroke / s)}" stroke-linecap="round" stroke-linejoin="round">${iconCache.get(name)}</g>`;
 }
 
+/** Without a label the image is purely decorative and is hidden from assistive tech. */
 function doc({ w, h, label, style = '', defs = '', body }) {
   const glyphs = [...glyphDefs.values()].filter((g) => g.d).map((g) => `<path id="${g.id}" d="${g.d}"/>`).join('');
   glyphDefs = new Map();
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${esc(label)}"><title>${esc(label)}</title>${style ? `<style>${style}</style>` : ''}<defs>${defs}${glyphs}</defs>${body}</svg>`;
+  const a11y = label ? `role="img" aria-label="${esc(label)}"><title>${esc(label)}</title>` : 'aria-hidden="true">';
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" ${a11y}${style ? `<style>${style}</style>` : ''}<defs>${defs}${glyphs}</defs>${body}</svg>`;
 }
 
 const REDUCED = '@media (prefers-reduced-motion:reduce){*{animation:none!important}.pulse,.flash{display:none}}';
@@ -102,7 +103,7 @@ const REDUCED = '@media (prefers-reduced-motion:reduce){*{animation:none!importa
 
 // mx/my: transparent margin baked into every card. Inline images already get ~7px of line
 // spacing below them on GitHub, so the vertical margin is smaller to keep the gutters even.
-const CARD = { w: 400, mx: 6, my: 3, pad: 18, tile: 34, chipH: 26, chipGap: 7, rowGap: 8, chipSize: 12, chipPadX: 10 };
+const CARD = { w: 400, mx: 6, my: 3, pad: 18, tile: 34, tileR: 13, chipH: 26, chipGap: 7, rowGap: 8, chipSize: 12, chipPadX: 10 };
 
 function chipRows(chips) {
   const maxWidth = CARD.w - 2 * (CARD.mx + CARD.pad);
@@ -132,10 +133,10 @@ function card(themeName, disc, c, rowCount, index) {
   const top = CARD.my + CARD.pad;
   const textX = left + CARD.tile + 12;
 
-  const title = text('title', c.title, textX, top + 14.5, 15.5, { fill: t.text });
-  const blurb = text('regular', c.blurb, textX, top + 31, 12, { fill: t.text2 });
+  // baseline that centres the cap height on the icon tile
+  const title = text('title', c.title, textX, top + CARD.tile / 2 + 5.5, 16, { fill: t.text });
   const room = right - 18 - textX;
-  if (Math.max(title.width, blurb.width) > room) console.warn(`! header text too wide in card "${c.id}" (${Math.round(Math.max(title.width, blurb.width))} > ${room})`);
+  if (title.width > room) console.warn(`! title too wide in card "${c.id}" (${Math.round(title.width)} > ${room})`);
 
   let chips = '';
   chipRows(c.chips).forEach((row, r) => {
@@ -153,9 +154,9 @@ function card(themeName, disc, c, rowCount, index) {
     `<rect x="${CARD.mx + 0.5}" y="${CARD.my + 0.5}" width="${CARD.w - 2 * CARD.mx - 1}" height="${h - 2 * CARD.my - 1}" rx="14" fill="url(#face)" stroke="${t.border}"/>` +
     (themeName === 'dark' ? `<path d="M${CARD.mx + 16} ${CARD.my + 1.5}H${CARD.w - CARD.mx - 16}" stroke="${t.sheen}" stroke-opacity=".05"/>` : '') +
     `<path d="M${left + 4} ${CARD.my + 0.5}h30" stroke="${tone}" stroke-width="2" stroke-linecap="round"/>` +
-    `<rect x="${left}" y="${top}" width="${CARD.tile}" height="${CARD.tile}" rx="10" fill="${tone}" fill-opacity="${t.tile}"/>` +
+    `<rect x="${left}" y="${top}" width="${CARD.tile}" height="${CARD.tile}" rx="${CARD.tileR}" fill="${tone}" fill-opacity="${t.tile}"/>` +
     icon(c.icon, left + 8, top + 8, 18, tone) +
-    title.svg + blurb.svg +
+    title.svg +
     `<circle class="led" style="animation-delay:${delay}s" cx="${ledX}" cy="${ledY}" r="8" fill="${tone}" fill-opacity=".16"/>` +
     `<circle class="led" style="animation-delay:${delay}s" cx="${ledX}" cy="${ledY}" r="3.2" fill="${tone}"/>` +
     chips;
@@ -189,16 +190,16 @@ function heading(themeName, disc) {
     `<circle cx="${cx}" cy="${y}" r="${core}" fill="${tone}"/>`;
 
   const title = text('heading', disc.title, 60, 48, 23, { fill: t.text, tracking: -0.3 });
-  const blurb = text('regular', disc.blurb, w - 6, 46, 14.5, { fill: t.text2, anchor: 'end' });
-  const rule = `<path d="M${n(60 + title.width + 18)} 40H${n(blurb.x0 - 18)}" stroke="${t.rule}" stroke-opacity="${t.ruleOpacity}"/>`;
-  const wide = node(40, 30, 38, 9.5, 4.5, 2) + title.svg + rule + blurb.svg;
+  // runs out to the outer edge of the cards below
+  const rule = `<path d="M${n(60 + title.width + 18)} 40H${w - 6}" stroke="${t.rule}" stroke-opacity="${t.ruleOpacity}"/>`;
+  const wide = node(40, 30, 38, 9.5, 4.5, 2) + title.svg + rule;
 
   // drawn about twice as large, because on a phone the image is shown at under half its size
   const bigTitle = text('heading', disc.title, 108, 49, 41, { fill: t.text, tracking: -0.6 });
   if (108 + bigTitle.width > w - 6) console.warn(`! narrow heading too wide: "${disc.title}"`);
   const narrow = node(34, 50, 68, 18, 8.5, 4) + bigTitle.svg;
 
-  return doc({ w, h, label: `${disc.title}. ${disc.blurb}`, style: RESPONSIVE, body: `<g class="wide">${wide}</g><g class="narrow">${narrow}</g>` });
+  return doc({ w, h, label: disc.title, style: RESPONSIVE, body: `<g class="wide">${wide}</g><g class="narrow">${narrow}</g>` });
 }
 
 // ───────────────────────────── hero ─────────────────────────────
@@ -316,7 +317,7 @@ function emailButton(themeName) {
   const w = 340, h = 76, m = 6;
   const body =
     `<rect x="${m + 0.5}" y="${m + 0.5}" width="${w - 2 * m - 1}" height="${h - 2 * m - 1}" rx="14" fill="url(#face)" stroke="${t.border}"/>` +
-    `<rect x="${m + 14}" y="${m + 14}" width="36" height="36" rx="10" fill="${t.text}" fill-opacity=".07"/>` +
+    `<rect x="${m + 14}" y="${m + 14}" width="36" height="36" rx="${CARD.tileR}" fill="${t.text}" fill-opacity=".07"/>` +
     icon('mail', m + 23, m + 23, 18, t.text) +
     text('title', 'Get in touch', m + 62, m + 29, 15, { fill: t.text }).svg +
     text('mono', profile.email, m + 62, m + 47, 11.5, { fill: t.text2 }).svg +
@@ -332,15 +333,16 @@ function footer(themeName) {
   const t = themes[themeName];
   const w = 800, h = 56, y = 28;
   const tones = Object.values(t.tones);
-  const layout = (line, size, r, step, gap) => {
-    const label = text('regular', line, w / 2 + (3 * step) / 2, y + size * 0.34, size, { fill: t.muted, anchor: 'middle' });
-    const dots = tones.map((tone, i) => `<circle cx="${n(label.x0 - gap - (2 - i) * step)}" cy="${y}" r="${r}" fill="${tone}"/>`).join('');
-    const rules = `<path d="M6 ${y}H${n(label.x0 - gap - 2 * step - gap)}M${n(label.x0 + label.width + gap)} ${y}H${w - 6}" stroke="${t.rule}" stroke-opacity="${t.ruleOpacity}"/>`;
-    return rules + dots + label.svg;
+  // a closing rule with the three discipline colours in the middle
+  const layout = (r, step, gap) => {
+    const x0 = w / 2 - step;
+    const dots = tones.map((tone, i) => `<circle cx="${x0 + i * step}" cy="${y}" r="${r}" fill="${tone}"/>`).join('');
+    const rules = `<path d="M6 ${y}H${x0 - gap}M${x0 + 2 * step + gap} ${y}H${w - 6}" stroke="${t.rule}" stroke-opacity="${t.ruleOpacity}"/>`;
+    return rules + dots;
   };
   return doc({
-    w, h, label: footerLine, style: RESPONSIVE,
-    body: `<g class="wide">${layout(footerLine, 12.5, 3, 12, 16)}</g><g class="narrow">${layout(footerLineShort, 27, 6.5, 26, 30)}</g>`,
+    w, h, style: RESPONSIVE,
+    body: `<g class="wide">${layout(3, 12, 16)}</g><g class="narrow">${layout(6.5, 26, 30)}</g>`,
   });
 }
 
@@ -429,7 +431,7 @@ const blocks = {
     `**${disc.title}**\n\n| Area | What I use |\n| :-- | :-- |\n` + disc.cards.map((c) => `| ${c.title} | ${c.chips.join(', ')} |`).join('\n'),
   ).join('\n\n'),
   contact: `<p align="center">\n<a href="mailto:${profile.email}">${picture('contact-email', 340, `Get in touch: ${profile.email}`)}</a>\n</p>`,
-  footer: `<p align="center">\n${picture('footer', 800, footerLine)}\n</p>`,
+  footer: `<p align="center">\n${picture('footer', 800, '')}\n</p>`,
 };
 
 const readmePath = join(root, 'README.md');

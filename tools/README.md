@@ -13,7 +13,7 @@ npm run preview    # renders ../README.md through GitHub's markdown API into ../
 ## Changing what the profile says
 
 Edit `content.mjs` and run the build: the name and role line, the three disciplines, every card
-(title, one-line blurb, chips, [Lucide](https://lucide.dev) icon name) and both colour themes live
+(title, chips, [Lucide](https://lucide.dev) icon name) and both colour themes live
 there. The build warns when two cards that share a row need different heights, or when a title
 does not fit.
 

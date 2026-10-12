@@ -98,6 +98,6 @@ I started with Lua game servers; today I run <a href="https://skillion.hu/en">Sk
 
 <!-- footer:start -->
 <p align="center">
-<picture><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HuzinaPatrik/HuzinaPatrik/main/assets/light/footer.svg"><img src="https://raw.githubusercontent.com/HuzinaPatrik/HuzinaPatrik/main/assets/dark/footer.svg" width="800" alt="Drawn in code, rendered as SVG. No trackers, no third-party widgets."></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HuzinaPatrik/HuzinaPatrik/main/assets/light/footer.svg"><img src="https://raw.githubusercontent.com/HuzinaPatrik/HuzinaPatrik/main/assets/dark/footer.svg" width="800" alt=""></picture>
 </p>
 <!-- footer:end -->
